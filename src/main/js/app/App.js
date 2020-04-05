@@ -1,11 +1,11 @@
 import React from 'react';
-import './App.css';
+import '../../resources/app/App.css';
 import axios from 'axios';
 
 /**
  * 
  */
-class App extends React.Component {
+export default class App extends React.Component {
 
   constructor(props) {
     super(props);
@@ -37,10 +37,10 @@ class App extends React.Component {
   render() {
     return <div className="App">
       <header className="App-header">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form">
           <table>
-            <tr><label>Name: <input type="text" onChange={(e) => { this.setState({ name: e.target.value }) }} /> </label></tr>
-            <tr><label>Address: <input type="text" onChange={(e) => { this.setState({ address: e.target.value }) }} /> </label></tr>
+            <tr><label className="label">Sign ID <input type="text" placeholder="Your Email" onChange={(e) => { this.setState({ name: e.target.value }) }} /> </label></tr>
+            <tr><label className="label">Secret Code <input type="password" placeholder="Your Password" onChange={(e) => { this.setState({ address: e.target.value }) }} /> </label></tr>
             <tr><input type="submit" value="Submit" /> </tr>
           </table>
         </form>
@@ -49,5 +49,3 @@ class App extends React.Component {
     </div>;
   }
 }
-
-export default App;
